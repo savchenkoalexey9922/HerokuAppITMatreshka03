@@ -17,9 +17,9 @@ public class CheckboxesTest {
     public void setup() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
-        // options.addArguments("incognito");
-        //    options.addArguments("headless"); // прогон тестов в скрытом режиме браузера
-           options.addArguments("disable-notification"); // не показывать уведомления
+        options.addArguments("incognito");
+        // options.addArguments("headless"); // прогон тестов в скрытом режиме браузера
+        options.addArguments("disable-notification"); // не показывать уведомления
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); //неявное ожидание прогрузки элементов на странице
 

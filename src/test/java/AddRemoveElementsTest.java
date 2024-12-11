@@ -22,7 +22,6 @@ public class AddRemoveElementsTest {
         options.addArguments("disable-notification"); // не показывать уведомления
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); //неявное ожидание прогрузки элементов на странице
-
     }
 
     @Test
@@ -32,13 +31,10 @@ public class AddRemoveElementsTest {
         driver.findElement(By.xpath("//button[text()='Add Element']")).click();
         boolean elementDeletePresent = driver.findElements(By.xpath("//button[text()='Delete']")).size() == 2; //Проверка, что на странице находится две кнопки Delete
         Assert.assertTrue(elementDeletePresent);
-
-
     }
 
     @AfterMethod(alwaysRun = true)
-    public void tearDown() throws InterruptedException {
-        Thread.sleep(2000);
+    public void tearDown() {
         driver.quit();
     }
 }
